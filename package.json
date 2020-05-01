@@ -31,7 +31,9 @@
     "lint": "eslint .",
     "tsc": "tsc -p tsconfig.json --outDir dist",
     "test": "nyc mocha",
-    "posttest": "npm run tsc && npm run lint"
+    "posttest": "npm run tsc && npm run lint",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@types/node": "^10.0.8",
@@ -59,7 +61,8 @@
     "shortid": "^2.2.6",
     "strong-globalize": "^4.1.1",
     "traverse": "^0.6.6",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "snyk": "^1.316.1"
   },
   "license": "MIT",
   "ci": {
@@ -68,5 +71,6 @@
       "loopback-connector-informix",
       "loopback-connector-mqlight"
     ]
-  }
+  },
+  "snyk": true
 }
